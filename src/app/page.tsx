@@ -113,10 +113,12 @@ export default function Home() {
     //     </a>
     //   </div>
     // </main>
-    <div className='text-fontColor justify-center'>
-      {header()}
-      {main()}
-      {footer()}
+    <div className='text-fontColor flex justify-center bg-mainColor min-w-fit'>
+      <div className=' max-w-7xl'>
+        {header()}
+        {main()}
+        {footer()}
+      </div>
     </div>
   )
 }
