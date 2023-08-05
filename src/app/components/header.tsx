@@ -1,20 +1,23 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function header()  {
   return (
-    <header className="flex p-10 items-center border-b font-bold">
-      <div className="flex basis-3/4 items-center mx-20">
-        <Image className='mr-28' src="/logo-nbg.png" alt="logo-image" width={200} height={0}/>
+    <header className="flex p-10 justify-around font-bold">
+      <div className="flex items-center basis-3/4">
+        <Link href="/">
+          <Image className='mr-28 hover' src="/logo-nbg.png" alt="logo-image" width={200} height={0}/>
+        </Link>
         <div>
           <ul className='flex'>
-            <li className='mr-14 text-2xl'>日記をつくる</li>
-            <li className='mr-14 text-2xl'>日記をかく</li>
-            <li className='text-2xl'>日記をよむ</li>
+            <li className='mr-14 text-2xl hover hover:text-subColor'><Link href="/create">日記をつくる</Link></li>
+            <li className='mr-14 text-2xl hover hover:text-subColor'>日記をかく</li>
+            <li className='text-2xl hover hover:text-subColor'>日記をよむ</li>
           </ul>
         </div>
       </div>
       {/* <div className="basis-1/4 text-xl">ログイン</div> */}
-      <div className="basis-1/4 text-xl flex items-center">
+      <div className="basis-1/4 text-xl flex justify-end items-center hover hover:text-subColor">
         <div className='mr-4 p-1 border rounded-full border-gray-500'>
           <Image className='' src="/default-icon.png" alt='default icon' width={50} height={0}></Image>
         </div>

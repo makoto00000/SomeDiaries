@@ -29,3 +29,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+  .hover {
+    @apply cursor-pointer transition-all duration-500 ease-out hover:scale-110;
+  }
+}
