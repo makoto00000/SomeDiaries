@@ -1,8 +1,8 @@
 import App from 'next/app'
 import Image from 'next/image'
-import Header from './components/header'
+import Header from './components/Header'
 import main from './components/main'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
