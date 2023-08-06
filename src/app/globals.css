@@ -6,11 +6,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-:root {
-  --foreground-rgb: 233, 233, 232;
+/* :root {
+  --foreground-rgb: 233, 233, 232; */
   /* --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255; */
-}
+/* } */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -20,7 +20,7 @@
   }
 } */
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -28,10 +28,13 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
 @layer components {
   .hover {
     @apply cursor-pointer transition-all duration-500 ease-out hover:scale-110;
+  }
+  .button {
+    @apply border border-borderColor rounded-3xl py-2 px-4 hover hover:bg-accentColor;
   }
 }
