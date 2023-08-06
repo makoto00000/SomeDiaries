@@ -1,4 +1,4 @@
-export default function footer() {
+export default function Footer() {
   return (
     <footer className="h-48 flex justify-center items-center text-3xl bg-subColor">© Copyright 2023 makoto.</footer>
   )

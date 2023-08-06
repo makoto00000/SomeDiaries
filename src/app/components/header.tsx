@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function header()  {
+export default function Header()  {
   return (
     <header className="flex p-10 justify-around font-bold">
       <div className="flex items-center basis-3/4">

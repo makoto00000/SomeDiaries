@@ -1,8 +1,8 @@
 import App from 'next/app'
 import Image from 'next/image'
-import header from './components/header'
+import Header from './components/header'
 import main from './components/main'
-import footer from './components/footer'
+import Footer from './components/footer'
 
 export default function Home() {
   return (
@@ -115,9 +115,9 @@ export default function Home() {
     // </main>
     <div className='text-fontColor flex justify-center bg-mainColor min-w-fit'>
       <div className=' max-w-7xl'>
-        {header()}
+        <Header />
         {main()}
-        {footer()}
+        <Footer />
       </div>
     </div>
   )
