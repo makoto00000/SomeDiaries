@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Button from "@/app/components/Button";
+import React from "react";
+
 export default function Comfirm() {
   return (
-    <div className="bg-diary-bg bg-center w-full h-full bg-no-repeat flex justify-center px-5">
-    <div className="flex items-center w-full px-44">
-      <div className="mr-20 w-1/2 h-3/4">
+    <div className="bg-diary-bg bg-center bg-contain bg-no-repeat flex justify-center px-5 py-32 max-w-6xl">
+    <div className="flex w-full px-24">
+      <div className="mr-20 w-1/2">
         <div className="mb-10">
           <h2 className="text-3xl mb-5">タイトル</h2>
           <p>タイトルタイトルタイトルタイトル</p>
@@ -21,7 +23,7 @@ export default function Comfirm() {
           </div>
         </div>
       </div>
-      <div className="w-1/2 h-3/4">
+      <div className="w-1/2">
         <div>
           <h2 className="text-3xl mb-5">ルール</h2>
           <p>・ルール1<br />・ルール2 <br />・ルール3</p>

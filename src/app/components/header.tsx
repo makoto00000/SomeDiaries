@@ -17,7 +17,7 @@ export default function Header()  {
         </div>
       </div>
       {/* <div className="basis-1/4 text-xl">ログイン</div> */}
-      <div className="basis-1/4 text-xl flex justify-end items-center hover hover:text-subColor">
+      <div className="text-xl flex justify-end items-center hover hover:text-subColor">
         <div className='mr-4 p-1 border rounded-full border-gray-500'>
           <Image className='' src="/default-icon.png" alt='default icon' width={50} height={0}></Image>
         </div>

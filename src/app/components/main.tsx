@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function main () {
+export default function Main () {
   return (
     <main className="flex justify-center flex-col"> 
       <Image className="" src="/eyecatch.png" alt="eyecatch" width={1440} height={0}></Image>
