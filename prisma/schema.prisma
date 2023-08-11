@@ -10,10 +10,46 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
+model User {
   id            Int       @id @default(autoincrement())
   name          String?
   email         String?   @unique
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  diaryAuthor   DiaryAuthor?
+  article       Article?
+}
+
+model Diary {
+  id  Int @id @default(autoincrement())
+  title         String
+  design        String
+  People        Int @map("numberOfPeople")
+  rule          String
+  diaryAuthor   DiaryAuthor?
+  article       Article?
+  isExchange    Boolean
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+}
+
+//intermediate table (Diary to User)
+model DiaryAuthor {
+  id            Int @id @default(autoincrement())
+  diary         Diary @relation(fields: [diaryId], references: [id])
+  diaryId       Int @unique
+  user          User @relation(fields: [userId], references: [id])
+  userId        Int @unique
+  isCreate      Boolean @default(false)
+}
+
+model Article {
+  id            Int @id @default(autoincrement())
+  content       String
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  diary         Diary @relation(fields: [diaryId], references: [id])
+  diaryId       Int @unique
+  user          User @relation(fields: [userId], references: [id])
+  userId        Int @unique
 }
