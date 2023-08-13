@@ -24,11 +24,11 @@ model Diary {
   id  Int @id @default(autoincrement())
   title         String
   design        String
-  People        Int @map("numberOfPeople")
+  people        Int @map("numberOfPeople")
   rule          String
   diaryAuthor   DiaryAuthor?
   article       Article?
-  isExchange    Boolean
+  isExchange    Boolean @default(true)
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
 }
