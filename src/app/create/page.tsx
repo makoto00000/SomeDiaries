@@ -141,6 +141,9 @@ export default function create() {
 
   const[isOpen, setIsOpen] = useState<boolean>(false);
 
+  
+  const[thisDiaryId, setThisDiaryId] = useState<number>();
+
   const hundleSaveClick = async () => {
     await fetch('/api/diaries', {
       method: 'POST',
@@ -148,7 +151,9 @@ export default function create() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({...postData}),
-    });
+    })
+    .then((response) => response.json())
+    .then((data) => setThisDiaryId(data.id))
     await setIsOpen(true);
   }
 
@@ -182,6 +187,7 @@ export default function create() {
     hundleSaveClick: hundleSaveClick,
     isOpen: isOpen,
     postData: postData,
+    thisDiaryId: Number(thisDiaryId),
   }
 
   return (

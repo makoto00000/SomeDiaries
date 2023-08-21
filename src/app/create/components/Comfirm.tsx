@@ -12,6 +12,7 @@ type ComfirmProps = {
   hundleComfirm: (e: React.MouseEvent<HTMLButtonElement>) => void, 
   hundleSaveClick: (e: React.MouseEvent<HTMLButtonElement>) => void,
   isOpen: boolean,
+  thisDiaryId: number, /*投稿したDiaryデータを格納する*/
 }
 
 export default function Comfirm({
@@ -21,7 +22,8 @@ export default function Comfirm({
     rule, 
     hundleComfirm, 
     hundleSaveClick, 
-    isOpen
+    isOpen,
+    thisDiaryId,
   }:ComfirmProps) {
 
   return (
@@ -60,7 +62,7 @@ export default function Comfirm({
       
       </div>
 
-    <Modal open={isOpen} modalText1="新しい日記が作成されました。" modalText2="早速最初の日記を書きましょう。" modalImage={diarySource} link="/" />
+    <Modal open={isOpen} modalText1="新しい日記が作成されました。" modalText2="早速最初の日記を書きましょう。" modalImage={diarySource} link={`{/read/${thisDiaryId}`} />
 
   </div>
   
