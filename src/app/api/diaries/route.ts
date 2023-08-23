@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/app/lib/prisma';
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
+
 
 async function getAllDiaries() {
   const diaries = await prisma.diary.findMany();
@@ -17,8 +19,13 @@ async function getLatestDiary() {
 }
 
 //GETメソッド
-export async function GET() {
-  const diaries = await prisma.diary.findMany();
+export async function GET(request: NextRequest) {
+  const id = parseInt(request.nextUrl.searchParams.get('id')!);
+  const diaries = await prisma.diary.findMany({
+    where: {
+      id: id,
+    }
+  });
   return NextResponse.json(diaries);
 }
 
