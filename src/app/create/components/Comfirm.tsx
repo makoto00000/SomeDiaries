@@ -62,7 +62,7 @@ export default function Comfirm({
       
       </div>
 
-    <Modal open={isOpen} modalText1="新しい日記が作成されました。" modalText2="早速最初の日記を書きましょう。" modalImage={diarySource} link={`{/read/${thisDiaryId}`} />
+    <Modal open={isOpen} modalText1="新しい日記が作成されました。" modalText2="早速最初の日記を書きましょう。" modalImage={diarySource} link={`/read/${thisDiaryId}`} />
 
   </div>
   
