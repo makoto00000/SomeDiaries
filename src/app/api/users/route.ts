@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/app/lib/prisma';
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 async function getAllUsers() {
   const users = await prisma.user.findMany();
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
 
 //DELETEメソッド
 export async function DELETE(request: NextRequest) {
-  const id = parseInt(request.nextUrl.searchParams.get('id')!);
+  const id = request.nextUrl.searchParams.get('id')!;
 
   await prisma.user.delete({
     where: {
